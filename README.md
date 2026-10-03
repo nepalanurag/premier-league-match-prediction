@@ -1,5 +1,7 @@
 # Premier League Match Prediction
 
+Walkthrough with all plots: https://nepalanurag.github.io/premier-league-match-prediction/
+
 I built models to predict English Premier League match outcomes from three seasons (2023-24 through 2025-26, 1,130 matches).
 
 I started with raw match data from football-data.co.uk and engineered my own features: rolling form for goals, shots, and shots on target, home/away splits, and a travel fatigue measure computed from stadium GPS coordinates and rest days. I compared logistic regression, Poisson regression for team goal rates, XGBoost, and LightGBM, and used the final Poisson model to generate win/draw/away probabilities for upcoming fixtures.
