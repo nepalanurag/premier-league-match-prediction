@@ -16,3 +16,7 @@ I started with raw match data from football-data.co.uk and engineered my own fea
 - `MATH_748_PROGRESS_REPORT_1.docx` / `.pdf`, `MATH_748_PROGRESS_REPORT_2.pdf` - progress updates
 - `epl_features_2324.csv` - the engineered feature set
 - `feature_summary_stats.csv`, `logistic_coefficients.csv`, `venue_form_delta.csv`, `away_travel_fatigue_leaders.csv`, `home_travel_fatigue_leaders.csv` - supporting outputs
+
+## Follow-up: season stability and ablation
+
+I stress-tested the engineered features with a transparent multinomial logistic model: [expansion analysis](https://nepalanurag.github.io/premier-league-match-prediction/expansion.html). The signal holds across seasons (CV accuracy 0.50, 0.50, 0.47) and beats always-home (0.51 vs 0.43), but the travel fatigue features do not earn their keep: dropping them slightly improves both accuracy and log-loss. Code in `analysis/`.
