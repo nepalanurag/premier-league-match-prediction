@@ -1,6 +1,6 @@
-"""Expansion analysis for the premier-league-match-prediction project.
+"""Season-by-season stability and feature ablation for premier-league-match-prediction.
 
-New questions the original notebook did not answer:
+Questions the main notebook's shuffled-fold evaluation does not answer:
 1. Do the engineered features hold up season by season, or does the signal decay?
 2. Which feature groups carry the signal? (ablation: travel fatigue vs form vs venue splits)
 3. How far above naive baselines (always-home-win, class priors) does the model get?
@@ -8,7 +8,7 @@ New questions the original notebook did not answer:
 Data: epl_features_2324.csv (1,130 matches, 2023-24 through 2025-26).
 Model here: multinomial logistic regression (scaled) on the 12 engineered features.
 Metric: log-loss (proper scoring rule for probabilities) + accuracy.
-"""
+
 import json
 import numpy as np
 import pandas as pd

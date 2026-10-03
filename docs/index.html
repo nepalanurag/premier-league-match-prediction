@@ -9206,6 +9206,56 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0bef175">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="How-the-features-hold-up-by-season">How the features hold up by season<a class="anchor-link" href="#How-the-features-hold-up-by-season">¶</a>
+</h3>
+<p>The models above were evaluated on shuffled folds. A tougher check is whether the features hold up season by season, and forward in time. To keep the test about the features rather than the model, I ran it with a single transparent model: multinomial logistic regression on the 12 engineered features. Same data throughout: 1,130 matches across 2023-24, 2024-25, and 2025-26 (43.2% home win, 32.4% away win, 24.4% draw).</p>
+<p><img src="figs/epl_seasons.png" alt="5-fold CV accuracy and log-loss by season"></p>
+<table>
+<thead><tr><th>season</th><th>matches</th><th>5-fold CV accuracy</th><th>5-fold CV log-loss</th></tr></thead>
+<tbody>
+<tr><td>2023-24</td><td>380</td><td>0.500</td><td>1.042</td></tr>
+<tr><td>2024-25</td><td>380</td><td>0.497</td><td>1.038</td></tr>
+<tr><td>2025-26</td><td>370</td><td>0.465</td><td>1.076</td></tr>
+</tbody>
+</table>
+<p>The signal is stable across the first two seasons and dips slightly in 2025-26. A forward test, training on 2023-24 and 2024-25 and testing on 2025-26, gives accuracy 0.478 and log-loss 1.067, consistent with the cross-validation story: the features generalize forward in time, not just within shuffled folds.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=25d14ec8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="What-the-model-actually-uses">What the model actually uses<a class="anchor-link" href="#What-the-model-actually-uses">¶</a>
+</h3>
+<p>Twelve features is a small enough set to ask which groups carry the signal. I dropped feature groups one at a time and re-ran 5-fold CV with the same logistic model:</p>
+<p><img src="figs/epl_ablation.png" alt="Accuracy and log-loss by feature set"></p>
+<table>
+<thead><tr><th>feature set</th><th>n features</th><th>5-fold CV accuracy</th><th>5-fold CV log-loss</th></tr></thead>
+<tbody>
+<tr><td>all features</td><td>12</td><td>0.511</td><td>1.014</td></tr>
+<tr><td>no travel fatigue</td><td>10</td><td>0.519</td><td>1.011</td></tr>
+<tr><td>venue splits only</td><td>4</td><td>0.511</td><td>1.020</td></tr>
+<tr><td>rolling form only</td><td>6</td><td>0.491</td><td>1.023</td></tr>
+<tr><td>always home win</td><td>0</td><td>0.432</td><td>—</td></tr>
+<tr><td>class priors</td><td>0</td><td>0.348</td><td>—</td></tr>
+</tbody>
+</table>
+<p>Two honest findings. First, the model clearly beats the naive baselines: 0.511 accuracy against 0.432 for always predicting the home team. Second, the travel fatigue features do not earn their keep for this model: dropping them <em>improves</em> both accuracy (0.519) and log-loss (1.011). They may help a different model, but here they add noise. The venue-split features alone match the full set on accuracy, which says home/away form splits are doing most of the work.</p>
+<p>One caveat: this checks the features through one model (multinomial logistic), not the Poisson or gradient boosting models above, and ablation results can differ by model class. Draws remain the hard case: most of the error is home/draw and away/draw confusion. Script: <a href="https://github.com/nepalanurag/premier-league-match-prediction/blob/main/analysis/season_and_ablation.py">analysis/season_and_ablation.py</a> in the repo.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed062348">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
