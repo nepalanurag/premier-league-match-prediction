@@ -1,0 +1,114 @@
+Date,Match_No,HomeTeam,AwayTeam,Team_Shots,Opp_Shots,Rolling_Shots,Rolling_Opp_Shots
+2023-08-11,1,Burnley,Man City,17,6,17.0,6.0
+2023-08-19,2,Man City,Newcastle,14,7,15.5,6.5
+2023-08-27,3,Sheffield United,Man City,30,6,20.333,6.333
+2023-09-02,4,Man City,Fulham,7,6,17.0,6.25
+2023-09-16,5,West Ham,Man City,29,6,19.4,6.2
+2023-09-23,6,Man City,Nott'm Forest,7,10,17.4,7.0
+2023-09-30,7,Wolves,Man City,23,3,19.2,6.2
+2023-10-08,8,Arsenal,Man City,4,12,14.0,7.4
+2023-10-21,9,Man City,Brighton,10,5,14.6,7.2
+2023-10-29,10,Man United,Man City,21,7,13.0,7.4
+2023-11-04,11,Man City,Bournemouth,21,5,15.8,6.4
+2023-11-12,12,Chelsea,Man City,15,17,14.2,9.2
+2023-11-25,13,Man City,Liverpool,16,8,16.6,8.4
+2023-12-03,14,Man City,Tottenham,18,8,18.2,9.0
+2023-12-06,15,Aston Villa,Man City,2,22,14.4,12.0
+2023-12-10,16,Luton,Man City,18,4,13.8,11.8
+2023-12-16,17,Man City,Crystal Palace,19,5,14.6,9.4
+2023-12-27,18,Everton,Man City,23,7,16.0,9.2
+2023-12-30,19,Man City,Sheffield United,18,4,16.0,8.4
+2024-01-13,20,Newcastle,Man City,27,12,21.0,6.4
+2024-01-31,21,Man City,Burnley,14,8,20.2,7.2
+2024-02-05,22,Brentford,Man City,25,9,21.4,8.0
+2024-02-10,23,Man City,Everton,19,5,20.6,7.6
+2024-02-17,24,Man City,Chelsea,31,9,23.2,8.6
+2024-02-20,25,Man City,Brentford,25,6,22.8,7.4
+2024-02-24,26,Bournemouth,Man City,15,13,23.0,8.4
+2024-03-03,27,Man City,Man United,27,3,23.4,7.2
+2024-03-10,28,Liverpool,Man City,10,19,21.6,10.0
+2024-03-31,29,Man City,Arsenal,12,6,17.8,9.4
+2024-04-03,30,Man City,Aston Villa,25,8,17.8,9.8
+2024-04-06,31,Crystal Palace,Man City,18,7,18.4,8.6
+2024-04-13,32,Man City,Luton,33,4,19.6,8.8
+2024-04-25,33,Brighton,Man City,14,7,20.4,6.4
+2024-04-28,34,Nott'm Forest,Man City,11,14,20.2,8.0
+2024-05-04,35,Man City,Wolves,20,2,19.2,6.8
+2024-05-11,36,Fulham,Man City,16,1,18.8,5.6
+2024-05-14,37,Tottenham,Man City,8,10,13.8,6.8
+2024-05-19,38,Man City,West Ham,28,3,16.6,6.0
+2024-08-18,39,Chelsea,Man City,11,10,16.6,5.2
+2024-08-24,40,Man City,Ipswich,14,1,15.4,5.0
+2024-08-31,41,West Ham,Man City,23,10,16.8,6.8
+2024-09-14,42,Man City,Brentford,18,8,18.8,6.4
+2024-09-22,43,Man City,Arsenal,33,5,19.8,6.8
+2024-09-28,44,Newcastle,Man City,16,11,20.8,7.0
+2024-10-05,45,Man City,Fulham,20,11,22.0,9.0
+2024-10-20,46,Wolves,Man City,22,3,21.8,7.6
+2024-10-26,47,Man City,Southampton,22,5,22.6,7.0
+2024-11-02,48,Bournemouth,Man City,18,12,19.6,8.4
+2024-11-09,49,Brighton,Man City,15,10,19.4,8.2
+2024-11-23,50,Man City,Tottenham,23,9,20.0,7.8
+2024-12-01,51,Liverpool,Man City,8,18,17.2,10.8
+2024-12-04,52,Man City,Nott'm Forest,17,12,16.2,12.2
+2024-12-07,53,Crystal Palace,Man City,12,12,15.0,12.2
+2024-12-15,54,Man City,Man United,10,10,14.0,12.2
+2024-12-21,55,Aston Villa,Man City,12,11,11.8,12.6
+2024-12-26,56,Man City,Everton,24,8,15.0,10.6
+2024-12-29,57,Leicester,Man City,14,11,14.4,10.4
+2025-01-04,58,Man City,West Ham,10,17,14.0,11.4
+2025-01-14,59,Brentford,Man City,21,18,16.2,13.0
+2025-01-19,60,Ipswich,Man City,17,8,17.2,12.4
+2025-01-25,61,Man City,Chelsea,15,10,15.4,12.8
+2025-02-02,62,Arsenal,Man City,7,12,14.0,13.0
+2025-02-15,63,Man City,Newcastle,11,3,14.2,10.2
+2025-02-23,64,Man City,Liverpool,16,8,13.2,8.2
+2025-02-26,65,Tottenham,Man City,12,11,12.2,8.8
+2025-03-08,66,Nott'm Forest,Man City,14,9,12.0,8.6
+2025-03-15,67,Man City,Brighton,11,15,12.8,9.2
+2025-04-02,68,Man City,Leicester,18,2,14.2,9.0
+2025-04-06,69,Man United,Man City,9,13,12.8,10.0
+2025-04-12,70,Man City,Crystal Palace,21,8,14.6,9.4
+2025-04-19,71,Everton,Man City,12,8,14.2,9.2
+2025-04-22,72,Man City,Aston Villa,14,7,14.8,7.6
+2025-05-02,73,Man City,Wolves,9,6,13.0,8.4
+2025-05-10,74,Southampton,Man City,26,2,16.4,6.2
+2025-05-20,75,Man City,Bournemouth,12,8,14.6,6.2
+2025-05-25,76,Fulham,Man City,20,13,16.2,7.2
+2025-08-16,77,Wolves,Man City,15,9,16.4,7.6
+2025-08-23,78,Man City,Tottenham,10,12,16.6,8.8
+2025-08-31,79,Brighton,Man City,12,12,13.8,10.8
+2025-09-14,80,Man City,Man United,13,12,14.0,11.6
+2025-09-21,81,Arsenal,Man City,5,12,11.0,11.4
+2025-09-27,82,Man City,Burnley,21,9,12.2,11.4
+2025-10-05,83,Brentford,Man City,10,6,12.2,10.2
+2025-10-18,84,Man City,Everton,19,5,13.6,8.8
+2025-10-26,85,Aston Villa,Man City,18,9,14.6,8.2
+2025-11-02,86,Man City,Bournemouth,15,8,16.6,7.4
+2025-11-09,87,Man City,Liverpool,14,7,15.2,7.0
+2025-11-22,88,Newcastle,Man City,17,9,16.6,7.6
+2025-11-29,89,Man City,Leeds,18,9,16.4,8.4
+2025-12-02,90,Fulham,Man City,11,12,15.0,9.0
+2025-12-06,91,Man City,Sunderland,18,8,15.6,9.0
+2025-12-14,92,Crystal Palace,Man City,7,16,14.2,10.8
+2025-12-20,93,Man City,West Ham,17,7,14.2,10.4
+2025-12-27,94,Nott'm Forest,Man City,16,7,13.8,10.0
+2026-01-01,95,Sunderland,Man City,14,10,14.4,9.6
+2026-01-04,96,Man City,Chelsea,14,8,13.6,9.6
+2026-01-07,97,Man City,Brighton,22,6,16.6,7.6
+2026-01-17,98,Man United,Man City,7,11,14.6,8.4
+2026-01-24,99,Man City,Wolves,11,11,13.6,9.2
+2026-02-01,100,Tottenham,Man City,15,12,13.8,9.6
+2026-02-08,101,Liverpool,Man City,17,15,14.4,11.0
+2026-02-11,102,Man City,Fulham,13,14,12.6,12.6
+2026-02-21,103,Man City,Newcastle,15,13,14.2,13.0
+2026-02-28,104,Leeds,Man City,14,14,14.8,13.6
+2026-03-04,105,Man City,Nott'm Forest,21,9,16.0,13.0
+2026-03-14,106,West Ham,Man City,24,1,17.4,10.2
+2026-04-12,107,Chelsea,Man City,18,12,18.4,9.8
+2026-04-19,108,Man City,Arsenal,15,9,18.4,9.0
+2026-04-22,109,Burnley,Man City,28,9,21.2,8.0
+2026-05-04,110,Everton,Man City,21,14,21.2,9.0
+2026-05-09,111,Man City,Brentford,25,4,21.4,9.6
+2026-05-13,112,Man City,Crystal Palace,15,6,20.8,8.4
+2026-05-19,113,Bournemouth,Man City,14,10,20.6,8.6

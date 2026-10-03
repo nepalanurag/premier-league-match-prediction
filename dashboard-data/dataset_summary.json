@@ -1,0 +1,58 @@
+{
+  "matches": 1130,
+  "seasons": [
+    "2023/24",
+    "2024/25",
+    "2025/26"
+  ],
+  "date_range": [
+    "2023-08-11",
+    "2026-05-19"
+  ],
+  "feature_matrix_shape": [
+    1130,
+    12
+  ],
+  "n_features": 12,
+  "features": [
+    "H_Roll_GF_5",
+    "H_Roll_SOT_5",
+    "H_Home_GF_Form",
+    "H_Home_SOT_Form",
+    "H_Roll_Pts_5",
+    "H_Travel_Fatigue_5",
+    "A_Roll_GF_5",
+    "A_Roll_SOT_5",
+    "A_Away_GF_Form",
+    "A_Away_SOT_Form",
+    "A_Roll_Pts_5",
+    "A_Travel_Fatigue_5"
+  ],
+  "outcome_counts": {
+    "home_win": 488,
+    "away_win": 366,
+    "draw": 276
+  },
+  "outcome_shares": {
+    "home_win": 0.432,
+    "away_win": 0.324,
+    "draw": 0.244
+  },
+  "naive_always_home_accuracy": 0.432,
+  "goals_per_game": {
+    "home": 1.62,
+    "away": 1.38
+  },
+  "shots_per_game": {
+    "home": 14.3,
+    "away": 11.8
+  },
+  "bet365_market_log_loss": 0.9639,
+  "poisson_walkforward_log_loss": 1.025,
+  "poisson_out_of_sample_accuracy": 0.504,
+  "poisson_correct": 474,
+  "poisson_n_test": 940,
+  "poisson_never_predicts_draw": true,
+  "walkforward_folds": 5,
+  "evaluation": "5-fold walk-forward time-series CV, scored on log-loss"
+}

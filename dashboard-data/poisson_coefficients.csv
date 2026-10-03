@@ -1,0 +1,13 @@
+feature,display_name,home_goals_coef,away_goals_coef
+H_Home_GF_Form,Home team's home scoring form,0.115,-0.057
+A_Away_SOT_Form,Away team's away shot-accuracy form,-0.081,0.074
+H_Roll_SOT_5,Home team's 5-game shots on target,0.061,-0.014
+A_Roll_Pts_5,Away team's 5-game points,-0.054,0.013
+H_Roll_Pts_5,Home team's 5-game points,0.044,-0.124
+H_Travel_Fatigue_5,Home team's travel fatigue,0.041,-0.017
+A_Roll_SOT_5,Away team's 5-game shots on target,-0.037,0.049
+H_Home_SOT_Form,Home team's home shot-accuracy form,0.014,-0.042
+H_Roll_GF_5,Home team's 5-game goals,-0.012,0.016
+A_Roll_GF_5,Away team's 5-game goals,0.011,0.031
+A_Away_GF_Form,Away team's away scoring form,0.008,0.039
+A_Travel_Fatigue_5,Away team's travel fatigue,-0.007,0.011

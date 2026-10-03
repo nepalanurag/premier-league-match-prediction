@@ -1,0 +1,10 @@
+model,log_loss
+Bet365 market (baseline),0.9639
+Poisson regression,1.0250
+Logistic regression,1.0269
+Random forest,1.0357
+MLP,1.0415
+LSTM,1.0634
+XGBoost,1.0789
+Gradient boosting,1.0983
+LightGBM,1.2134
