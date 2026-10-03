@@ -1,0 +1,64 @@
+{
+  "seed": 42,
+  "n": 1130,
+  "class_balance": {
+    "H": 0.431858407079646,
+    "A": 0.3238938053097345,
+    "D": 0.24424778761061947
+  },
+  "per_season": {
+    "2023-24": {
+      "n": 380,
+      "log_loss": 1.0418855503653497,
+      "accuracy": 0.5
+    },
+    "2024-25": {
+      "n": 380,
+      "log_loss": 1.0383493398914814,
+      "accuracy": 0.49736842105263157
+    },
+    "2025-26": {
+      "n": 370,
+      "log_loss": 1.0759104126398973,
+      "accuracy": 0.4648648648648649
+    }
+  },
+  "ablation": {
+    "all features": {
+      "n_features": 12,
+      "log_loss": 1.013866949882883,
+      "accuracy": 0.5106194690265486
+    },
+    "no travel fatigue": {
+      "n_features": 10,
+      "log_loss": 1.010966517216625,
+      "accuracy": 0.5185840707964602
+    },
+    "rolling form only": {
+      "n_features": 6,
+      "log_loss": 1.022794697338332,
+      "accuracy": 0.4911504424778761
+    },
+    "venue splits only": {
+      "n_features": 4,
+      "log_loss": 1.019675822494898,
+      "accuracy": 0.5106194690265486
+    },
+    "always home win": {
+      "n_features": 0,
+      "log_loss": 20.477898651162132,
+      "accuracy": 0.431858407079646
+    },
+    "class priors": {
+      "n_features": 0,
+      "log_loss": 23.508117298919768,
+      "accuracy": 0.347787610619469
+    }
+  },
+  "forward_test": {
+    "train_n": 760,
+    "test_n": 370,
+    "log_loss": 1.0667117465639866,
+    "accuracy": 0.4783783783783784
+  }
+}
