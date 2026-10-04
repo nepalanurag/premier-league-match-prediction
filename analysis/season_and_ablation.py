@@ -1,3 +1,5 @@
+import os
+
 """Season-by-season stability and feature ablation for premier-league-match-prediction.
 
 Questions the main notebook's shuffled-fold evaluation does not answer:
@@ -8,22 +10,26 @@ Questions the main notebook's shuffled-fold evaluation does not answer:
 Data: epl_features_2324.csv (1,130 matches, 2023-24 through 2025-26).
 Model here: multinomial logistic regression (scaled) on the 12 engineered features.
 Metric: log-loss (proper scoring rule for probabilities) + accuracy.
-
+"""
 import json
-import numpy as np
-import pandas as pd
+
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.pipeline import Pipeline
+import numpy as np
+import pandas as pd
 from sklearn.dummy import DummyClassifier
-from sklearn.model_selection import cross_val_predict, StratifiedKFold
-from sklearn.metrics import log_loss, accuracy_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, log_loss
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 SEED = 42
-df = pd.read_csv("/home/hatch/workspace/expand-work/epl.csv", parse_dates=["Date"])
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+df = pd.read_csv(os.path.join(REPO, "epl_features_2324.csv"),
+                 parse_dates=["Date"])
 df["season"] = df["Date"].apply(
     lambda d: f"{d.year}-{str(d.year+1)[-2:]}" if d.month >= 8 else f"{d.year-1}-{str(d.year)[-2:]}")
 le = LabelEncoder()
@@ -69,7 +75,8 @@ axes[1].set_xticks(range(len(seasons))); axes[1].set_xticklabels(seasons)
 axes[1].set_title("CV log-loss by season (lower is better)"); axes[1].set_ylabel("log-loss")
 fig.suptitle("Does the signal hold up season by season? (multinomial logistic, 5-fold CV)")
 fig.tight_layout()
-fig.savefig("/home/hatch/workspace/expand-work/figs/epl_seasons.png", dpi=110)
+os.makedirs(os.path.join(REPO, "figures"), exist_ok=True)
+fig.savefig(os.path.join(REPO, "figures", "epl_seasons.png"), dpi=110)
 plt.close(fig)
 
 # 2. Time-based: train on first two seasons, test on 2025-26
@@ -105,9 +112,9 @@ axes[1].barh(names, [abl[n]["log_loss"] for n in names])
 axes[1].set_title("5-fold CV log-loss by feature set (lower is better)")
 fig.suptitle("Ablation: which engineered features carry the signal?")
 fig.tight_layout()
-fig.savefig("/home/hatch/workspace/expand-work/figs/epl_ablation.png", dpi=110)
+fig.savefig(os.path.join(REPO, "figures", "epl_ablation.png"), dpi=110)
 plt.close(fig)
 
-with open("/home/hatch/workspace/expand-work/epl_metrics.json", "w") as f:
+with open(os.path.join(REPO, "analysis", "metrics.json"), "w") as f:
     json.dump(out, f, indent=2)
 print(json.dumps(out, indent=2))

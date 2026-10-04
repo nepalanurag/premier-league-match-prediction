@@ -6,7 +6,7 @@ I built models to predict English Premier League match outcomes from three seaso
 
 I started with raw match data from football-data.co.uk and engineered my own features: rolling form for goals, shots, and shots on target, home/away splits, and a travel fatigue measure computed from stadium GPS coordinates and rest days. I compared logistic regression, Poisson regression for team goal rates, XGBoost, and LightGBM, and used the final Poisson model to generate win/draw/away probabilities for upcoming fixtures.
 
-I also stress-tested the engineered features themselves with a transparent multinomial logistic model: the signal holds up across seasons (CV accuracy 0.50, 0.50, 0.47 for 2023-24, 2024-25, 2025-26, and a forward test training on the first two seasons and testing on 2025-26 at 0.48) and beats the naive baselines (0.51 vs 0.43 for always-home), but the travel fatigue features do not earn their keep: dropping them slightly improves both accuracy and log-loss. The season breakdown and ablation are part of the walkthrough above, and the code is in `analysis/`.
+I also stress-tested the engineered features themselves with a transparent multinomial logistic model: the signal holds up across seasons (CV accuracy 0.50, 0.50, 0.46 for 2023-24, 2024-25, 2025-26, and a forward test training on the first two seasons and testing on 2025-26 at 0.48) and beats the naive baselines (0.51 vs 0.43 for always-home), but the travel fatigue features do not earn their keep: dropping them slightly improves both accuracy and log-loss. The numbers are in `analysis/metrics.json`, and the code that produced them is `analysis/season_and_ablation.py`.
 
 ## Files
 
