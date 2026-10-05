@@ -9215,6 +9215,17 @@ Name: count, dtype: int64
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Takeaway">Takeaway<a class="anchor-link" href="#Takeaway">¶</a></h2><p>Public match history gets you close to the betting market but not past it. A simple Poisson model on twelve leakage-free form features scores 1.0250 against the market's 0.9639, and its probabilities are well calibrated. The complex models lose because football has too much randomness to fit, and the clearest limit is draws: the model never predicts one. Against a benchmark with more information than you have, close and honest beats fancy and overfit.</p>
+<h2 id="Time-respecting-ablation">Time-respecting ablation<a class="anchor-link" href="#Time-respecting-ablation">&#182;</a></h2>
+<p>The main notebook's feature ablation used shuffled cross-validation, which lets future matches inform past predictions. This follow-up re-runs the ablation under <code>TimeSeriesSplit</code> forward-chaining (<code>analysis/season_and_ablation.py</code>; the original is preserved as <code>analysis/season_and_ablation_shuffled.py</code>). Both runs are reported:</p>
+<p><img src="figs/epl_seasons_timeseries.png" alt="Per-season accuracy under time-respecting splits" style="max-width:100%;"></p>
+<p>Per-season accuracy under the time-respecting protocol: 0.50 (2023/24), 0.45 (2024/25), 0.42 (2025/26); forward test 0.4784. The model still clears the always-home (0.42) and priors (0.38) baselines.</p>
+<p><img src="figs/epl_ablation_timeseries.png" alt="Feature ablation under time-respecting splits" style="max-width:100%;"></p>
+<table>
+<tr><th>Travel-fatigue ablation (time-respecting)</th><th>Log-loss</th><th>Accuracy</th></tr>
+<tr><td>All 12 features</td><td>1.035</td><td>0.500</td></tr>
+<tr><td>Without travel fatigue</td><td>1.029</td><td>0.498</td></tr>
+</table>
+<p>The travel-fatigue null on log-loss agrees with the shuffled-CV run (1.029 without vs 1.035 with). The accuracy side is now essentially flat (0.498 vs 0.500) instead of slightly favoring the drop under shuffled CV (0.519 vs 0.511). The conclusion is unchanged; the protocol is now consistent with how the model would actually be used.</p>
 </div>
 </div>
 </div>
